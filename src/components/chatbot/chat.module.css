@@ -1,0 +1,133 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  height: 95vh;
+}
+
+.messages-wrapper {
+  overflow-y: auto;
+  height: calc(100% - 50px);
+}
+
+/* messages */
+.messages-container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  overflow: auto;
+  height: 100%;
+}
+
+.message-box div div {
+  white-space: normal !important;
+}
+
+.message-box div div span,
+.input-box span {
+  background-color: transparent !important;
+  color: #1d1c1d !important;
+}
+
+.error-msg div div {
+  font-weight: 500;
+  display: flex;
+  align-items: flex-end;
+  background-color: #ff00001f !important;
+  border: 1px solid red;
+}
+
+.error-msg div div div {
+  background-color: transparent !important;
+  border: none;
+}
+
+#select-data {
+  border: 1.4px solid red !important;
+}
+
+.input-box {
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: #fff;
+  justify-content: center;
+  align-items: center;
+}
+
+.messageInput {
+  height: 40px;
+  margin-top: 3px;
+  border: 1.4px solid hsl(232, 18%, 80%);
+  border-radius: 4px !important;
+}
+
+.messageInput div {
+  background-color: transparent;
+  border: none;
+}
+
+.messageInput:focus {
+  outline: 1.4px solid hsl(240, 100%, 67%) !important;
+}
+
+.messageInput div div {
+  border: none;
+}
+
+.messageInput div:nth-child(2) button {
+  border: none;
+}
+
+/* ripple effect */
+.mic-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  outline: none !important;
+}
+
+.mic-button svg {
+  pointer-events: none;
+}
+
+.ripple {
+  position: relative;
+}
+
+.ripple:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(155, 205, 245, 0.5);
+  border-radius: 50%;
+  outline: none;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: ripple-animation 1s linear infinite;
+}
+
+@keyframes ripple-animation {
+  0% {
+    width: 0;
+    height: 0;
+    opacity: 0.5;
+  }
+  100% {
+    width: 200%;
+    height: 200%;
+    opacity: 0;
+  }
+}
+
+.messages-wrapper::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
